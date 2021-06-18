@@ -77,11 +77,19 @@ const getHeadTable = (thead) => {
 const getBodyTable = (data, keysObject) => {
   let htmlBody = `<tbody>`;
 
-  data.forEach((body) => {
-    const user = body.user;
+  const newData = data
+    .map((item) => {
+      return item.user;
+    })
+    .sort((a, b) => {
+      return a.name.localeCompare(b.name);
+    });
+
+  newData.forEach((body) => {
+    //const user = body.user;
     htmlBody += "<tr class='table-item-generate'>";
     keysObject.forEach((key) => {
-      htmlBody += `<td class="${key}">${user[key]}</td>`;
+      htmlBody += `<td class="${key}">${body[key]}</td>`;
     });
 
     htmlBody += "</tr>";
