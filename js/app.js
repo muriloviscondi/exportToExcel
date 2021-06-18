@@ -162,9 +162,13 @@ const exportToExcel = (tableId, tableSelected) => {
 
   rowsActive.forEach((row) => tbody.appendChild(row.cloneNode(true)));
 
-  var blob = new Blob([newTable.innerHTML], {
+  const vEncodeHead = '<html><head><meta charset="UTF-8"></head><body>';
+  const HTML = newTable.innerHTML;
+
+  const blob = new Blob([vEncodeHead + HTML + "</body></html>"], {
     type: "application/vnd.ms-excel;charset=utf-8",
   });
+
   saveAs(blob, "Report.xls");
 };
 
