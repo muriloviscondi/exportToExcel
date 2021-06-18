@@ -41,6 +41,12 @@ const createTable = (data, tableId) => {
   setTable(tableId, table);
   filteredSearch(keysObject);
   setMultiselect(tableId, "state");
+
+  $(`#${tableId} table`).DataTable({
+    filter: false,
+    ordering: false,
+    info: false,
+  });
 };
 
 const getKeys = (data) => {
@@ -230,6 +236,7 @@ const setMultiselect = (tableId, id) => {
   `;
 
   const parentElement = input.closest("th");
+  parentElement.setAttribute("id", "th-state");
   parentElement.innerHTML = html;
 
   $(`#${id}`).multiselect({

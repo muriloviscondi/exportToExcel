@@ -22,3 +22,41 @@
   height: 225px;
   max-height: 225px;
 }
+
+.dataTables_paginate.paging_simple_numbers {
+  float: none !important;
+  text-align: center;
+}
+
+.dataTables_length {
+  position: absolute;
+  bottom: -4px;
+  right: 16px;
+}
+
+.table tbody {
+  display: block;
+  height: 50vh;
+  overflow: auto;
+}
+
+.table thead,
+.table tbody tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed; /* even columns width , fix width of table too*/
+}
+
+.table thead {
+  width: calc(
+    100% - 1em
+  ); /* scrollbar is average 1em/16px width, remove it from thead width */
+}
+
+th#th-state {
+  min-width: 150px !important;
+}
+
+.table table {
+  width: 100%;
+}
