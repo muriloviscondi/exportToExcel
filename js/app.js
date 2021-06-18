@@ -41,12 +41,6 @@ const createTable = (data, tableId) => {
   setTable(tableId, table);
   filteredSearch(keysObject);
   setMultiselect(tableId, "state");
-
-  $(`#${tableId} table`).DataTable({
-    filter: false,
-    ordering: false,
-    info: false,
-  });
 };
 
 const getKeys = (data) => {
