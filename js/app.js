@@ -162,13 +162,10 @@ const exportToExcel = (tableId, tableSelected) => {
 
   rowsActive.forEach((row) => tbody.appendChild(row.cloneNode(true)));
 
-  var a = document.createElement("a");
-  var data_type = "data:application/vnd.ms-excel";
-  // var table_div = document.getElementById(newTable);
-  var table_html = newTable.outerHTML.replace(/ /g, "%20");
-  a.href = data_type + ", " + table_html;
-  a.download = "Siga Geomarketing.xls";
-  a.click();
+  var blob = new Blob([newTable.innerHTML], {
+    type: "application/vnd.ms-excel;charset=utf-8",
+  });
+  saveAs(blob, "Report.xls");
 };
 
 const filteredSearch = (inputId) => {
