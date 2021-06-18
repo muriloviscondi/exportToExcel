@@ -1,0 +1,24 @@
+.table-generate {
+  cursor: default;
+}
+
+.table-item-generate.active {
+  background-color: #ccc;
+}
+
+.table-item-generate.active:hover {
+  background-color: rgba(204, 204, 204, 0.7);
+}
+
+.hidden {
+  width: 0 !important;
+  height: 0 !important;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.multiselect-native-select ul {
+  width: 300px !important;
+  height: 225px;
+  max-height: 225px;
+}
